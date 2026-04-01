@@ -156,7 +156,7 @@
       });
     }
 
-    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, {passive: true});
     window.addEventListener("resize", scheduleLayoutChange);
 
     const mainEl = document.querySelector("main");
