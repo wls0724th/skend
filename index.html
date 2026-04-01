@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKEND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="top-banner">1초 회원 가입으로 10,000원의 혜택을 받으세요.</div>
+    <header class="header">
+      <button type="button" class="menu-btn">MENU</button>
+      <img
+        class="logo"
+        src="./logo-w.svg"
+        alt="SKEND"
+        width="78"
+        height="52"
+        data-logo-dark="./logo-w.svg"
+        data-logo-light="./logo.svg" />
+      <nav class="nav-links" aria-label="유틸리티">
+        <a href="#">KR</a>
+        <a href="#">Search</a>
+        <a href="#">Mypage</a>
+        <a href="#">Cart <span class="badge">0</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="scan-section"
+        aria-label="메인 비주얼"
+        data-header-theme="dark">
+        <div class="stage">
+          <div class="image blur" aria-hidden="true"></div>
+          <div class="image sharp" aria-hidden="true"></div>
+
+          <!-- <div class="fog" aria-hidden="true"></div> -->
+
+          <div class="scan-track" aria-hidden="true">
+            <svg class="scan-grid" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="gridFade" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="white" stop-opacity="0" />
+                  <stop offset="60%" stop-color="white" stop-opacity="1" />
+                </linearGradient>
+                <mask id="gridMask">
+                  <rect width="100%" height="100%" fill="url(#gridFade)" />
+                </mask>
+
+                <filter id="blurStrong" x="0" y="0" width="100%" height="100%">
+                  <feGaussianBlur stdDeviation="3" />
+                </filter>
+                <filter id="blurMid" x="0" y="0" width="100%" height="100%">
+                  <feGaussianBlur stdDeviation="1.2" />
+                </filter>
+
+                <linearGradient id="topZone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="white" stop-opacity="1" />
+                  <stop offset="40%" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <mask id="topMask">
+                  <rect width="100%" height="100%" fill="url(#topZone)" />
+                </mask>
+
+                <linearGradient id="midZone" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="20%" stop-color="white" stop-opacity="0" />
+                  <stop offset="50%" stop-color="white" stop-opacity="1" />
+                  <stop offset="70%" stop-color="white" stop-opacity="0" />
+                </linearGradient>
+                <mask id="midMask">
+                  <rect width="100%" height="100%" fill="url(#midZone)" />
+                </mask>
+                <!-- 
+                <pattern
+                  id="grid"
+                  width="14"
+                  height="14"
+                  patternUnits="userSpaceOnUse">
+                  <path
+                    d="M14 0H0V14"
+                    fill="none"
+                    stroke="rgba(255,255,255,0.6)"
+                    stroke-width="0.5" />
+                </pattern> -->
+              </defs>
+
+              <rect
+                width="100%"
+                height="100%"
+                fill="url(#grid)"
+                mask="url(#gridMask)" />
+              <rect
+                width="100%"
+                height="100%"
+                fill="url(#grid)"
+                filter="url(#blurMid)"
+                mask="url(#midMask)"
+                opacity="0.7" />
+              <rect
+                width="100%"
+                height="100%"
+                fill="url(#grid)"
+                filter="url(#blurStrong)"
+                mask="url(#topMask)"
+                opacity="0.5" />
+            </svg>
+            <div class="scan-line-container">
+              <div class="scan-glow"></div>
+              <svg
+                class="scan-line"
+                viewBox="0 0 1920 6"
+                preserveAspectRatio="none"
+                aria-hidden="true">
+                <path d="M0 4L960 0L1920 4V6H0V4Z" fill="white" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- <div class="title">
+            <img src="../0318-css/slogan.png" alt="No Guesses, Just Numbers" />
+          </div> -->
+        </div>
+      </section>
+
+      <section class="intro" data-header-theme="light">
+        <div class="intro-divider"></div>
+        <h2>
+          자연 유래 성분과 과학의 균형을 바탕으로,<br />자극 없이 깊이 스며드는
+          보습과 진정을 제공합니다.
+        </h2>
+        <p>
+          Based on a balance of nature-derived ingredients and science,<br />it
+          delivers deep hydration and soothing care without irritation.
+        </p>
+      </section>
+
+      <!-- 카테고리 영역 -->
+      <!-- <section class="category" aria-label="카테고리" data-header-theme="light">
+        <article class="cat-item">
+          <img src="./tab-01.png" alt="" />
+          <span>스킨케어</span>
+        </article>
+        <article class="cat-item">
+          <img src="./tab-02.png" alt="" />
+          <span>바디케어</span>
+        </article>
+        <article class="cat-item">
+          <img src="./tab-03.png" alt="" />
+          <span>세트</span>
+        </article>
+      </section> -->
+
+      <section
+        class="products"
+        aria-label="추천 상품"
+        data-header-theme="light">
+        <article class="product">
+          <div class="thumb">
+            <img
+              class="thumb-img thumb-img--default"
+              src="./product.png"
+              alt="더마젠 47 메디컬 디바이스 MD 크림" />
+            <img
+              class="thumb-img thumb-img--hover"
+              src="./hover.png"
+              alt=""
+              aria-hidden="true" />
+          </div>
+          <div class="meta">
+            <h4>더마젠 47 메디컬 디바이스 MD 크림</h4>
+            <p>
+              트러블 · 민감성 피부를 위한 진정 &amp; 보습 솔루션 트러블 · 민감성
+              피부를 위한 진정 &amp; 보습 솔루션트러블 · 민감성 피부를 위한 진정
+              &amp; 보습 솔루션
+            </p>
+            <div class="price">
+              <span class="old">65,000원</span>
+              <strong>50,000원</strong>
+              <strong class="discount">23%</strong>
+            </div>
+          </div>
+        </article>
+        <article class="product">
+          <div class="thumb">
+            <img
+              class="thumb-img thumb-img--default"
+              src="./product.png"
+              alt="더마젠 47 메디컬 디바이스 솔루션" />
+            <img
+              class="thumb-img thumb-img--hover"
+              src="./hover.png"
+              alt=""
+              aria-hidden="true" />
+          </div>
+          <div class="meta">
+            <h4>더마젠 47 메디컬 디바이스 솔루션</h4>
+            <p>
+              트러블 · 민감성 피부를 위한 진정 &amp; 보습 솔루션 트러블 · 민감성
+              피부를 위한 진정 &amp; 보습 솔루션트러블 · 민감성 피부를 위한 진정
+            </p>
+            <div class="price">
+              <span class="old">65,000원</span>
+              <strong>50,000원</strong>
+              <strong class="discount">23%</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="brand-band" data-header-theme="dark">
+        <h3>우리는 소재의 본질을 존중하고, 유행보다는 품질에 집중합니다.</h3>
+        <p>We honor the essence of materials and value quality over trends.</p>
+      </section>
+
+      <!-- <section class="work" data-header-theme="light">
+        <img src="./work.png" alt="SKEND 작업물 소개" />
+      </section> -->
+
+      <section class="instagram" data-header-theme="light">
+        <h3>스캔드 공식 Instagram</h3>
+        <p>@SKEND_official</p>
+        <div class="insta-grid">
+          <article class="insta-item">
+            <img src="./product-01.png" alt="Instagram 게시물" />
+          </article>
+          <article class="insta-item">
+            <img src="./product-02.png" alt="Instagram 게시물" />
+          </article>
+          <article class="insta-item">
+            <img src="./product-03.png" alt="Instagram 게시물" />
+          </article>
+          <article class="insta-item">
+            <img src="./product-01.png" alt="Instagram 게시물" />
+          </article>
+          <article class="insta-item">
+            <img src="./product-02.png" alt="Instagram 게시물" />
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" data-header-theme="dark">
+      <div class="footer-top">
+        <div class="footer-top-roller" aria-hidden="true">
+          <div class="footer-top-track">
+            <img class="footer-top-banner" src="./banner.png" alt="" />
+            <img class="footer-top-banner" src="./banner.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <div class="footer-links">
+            브랜드 소개 · 이용약관 · 개인정보처리방침 · 이용안내 · FAQ
+          </div>
+          <div class="footer-info-wrapper">
+            <div class="footer-info">
+              <p>COMPANY : BRAND&nbsp;&nbsp; OWNER : aaa&nbsp;&nbsp;</p>
+              <p>TEL : 010 - 0000 - 0000</p>
+              <p>ADDRESS : aaaa aaaaa aa aazzzzzzzzzzzzz</p>
+              <p>EMAIL : info@skend.com</p>
+            </div>
+            <div class="footer-cs">
+              <p>000-00-00000</p>
+              <p>MON - FRI AM 10:00 - PM 04:00</p>
+              <p>SAT,SUN,HOLIDAY OFF</p>
+            </div>
+          </div>
+          <p class="copyright">Copyright. SKEND. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+          <img src="./logo-w.svg" alt="SKEND" width="78" height="52" />
+          <span>No Guesses, Just Numbers</span>
+        </div>
+      </div>
+    </footer>
+    <script src="./main.js" defer></script>
+  </body>
+</html>
