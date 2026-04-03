@@ -19,12 +19,15 @@ body {
 }
 
 .mo-hide {
-  display: none;
+  display: block;
 }
 
 @media screen and (max-width: 768px) {
   .pc-hide {
     display: block;
+  }
+  .mo-hide {
+    display: none;
   }
 }
 
@@ -111,7 +114,7 @@ body {
 }
 
 .scan-section {
-  height: 200vh;
+  height: 150vh;
   position: relative;
 }
 
@@ -505,13 +508,16 @@ main {
   display: block;
 }
 
+.footer-bottom p {
+  color: #787e87;
+}
 .footer-top-roller {
   overflow: hidden;
 }
 
 .footer-top-track {
   display: flex;
-  width: 100%;
+  width: 75%;
   animation: footerBannerRoll 30s linear infinite;
 }
 
@@ -537,9 +543,22 @@ main {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .footer-top-track {
+    width: 180%;
+  }
+}
+
 .footer-info-wrapper {
   display: flex;
   gap: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-info-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .footer-bottom {

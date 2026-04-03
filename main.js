@@ -39,6 +39,7 @@
       if (scanSection) {
         const sr = scanSection.getBoundingClientRect();
         scanTop = sr.top + window.scrollY;
+        // 스캔 구간 길이: sticky 스테이지가 한 화면을 지나가며 끝까지 스크롤하는 거리
         scanRange = Math.max(1, scanSection.offsetHeight - winH);
       }
     }
@@ -105,7 +106,14 @@
         return;
       }
 
-      const scanProgress = clamp((scrollY - scanTop) / scanRange);
+      // 기존: 뷰포트 상단이 섹션 상단(scanTop)에 닿을 때 진행률 0
+      // const scanProgress = clamp((scrollY - scanTop) / scanRange);
+
+      // 변경: 뷰포트 세로 중앙이 섹션 상단을 지난 만큼 스크롤한 것을 0으로 보고 진행
+      // (scrollY === scanTop - winH/2 일 때 중앙과 섹션 상단이 문서상 같은 Y)
+      const scanProgress = clamp(
+        (scrollY - (scanTop - winH * 0.25)) / scanRange,
+      );
 
       if (
         lastScanProgress < 0 ||
