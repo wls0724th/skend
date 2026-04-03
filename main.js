@@ -112,7 +112,7 @@
       // 변경: 뷰포트 세로 중앙이 섹션 상단을 지난 만큼 스크롤한 것을 0으로 보고 진행
       // (scrollY === scanTop - winH/2 일 때 중앙과 섹션 상단이 문서상 같은 Y)
       const scanProgress = clamp(
-        (scrollY - (scanTop - winH * 0.25)) / scanRange,
+        (scrollY - (scanTop - winH * 0.5)) / scanRange,
       );
 
       if (
