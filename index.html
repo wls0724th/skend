@@ -131,12 +131,14 @@
       <section class="intro" data-header-theme="light">
         <div class="intro-divider"></div>
         <h2>
-          자연 유래 성분과 과학의 균형을 바탕으로,<br />자극 없이 깊이 스며드는
+          자연 유래 성분과 과학의 균형을 바탕으로,<br />자극 없이 깊이
+          스며드는<br class="pc-hide" />
           보습과 진정을 제공합니다.
         </h2>
         <p>
-          Based on a balance of nature-derived ingredients and science,<br />it
-          delivers deep hydration and soothing care without irritation.
+          Based on a balance of nature-derived ingredients and science,<br
+            class="mo-hide" />it delivers deep hydration and soothing care
+          without irritation.
         </p>
       </section>
 
@@ -219,7 +221,11 @@
       </section> -->
 
       <section class="img">
-        <img src="./band-01.png" alt="" />
+        <picture>
+          <!-- 768px 이하: 모바일용 이미지 (파일명은 실제 에셋에 맞게 수정) -->
+          <source media="(max-width: 768px)" srcset="./band-01-mo.png" />
+          <img src="./band-01.png" alt="" />
+        </picture>
       </section>
 
       <section class="instagram" data-header-theme="light">
@@ -245,8 +251,14 @@
       </section>
 
       <section class="brand-band" data-header-theme="dark">
-        <h3>우리는 소재의 본질을 존중하고, 유행보다는 품질에 집중합니다.</h3>
-        <p>We honor the essence of materials and value quality over trends.</p>
+        <h3>
+          우리는 소재의 본질을 존중하고,<br class="pc-hide" />
+          유행보다는 품질에 집중합니다.
+        </h3>
+        <p>
+          We honor the essence of materials <br class="pc-hide" />and value
+          quality over trends.
+        </p>
       </section>
     </main>
 

@@ -14,6 +14,20 @@ body {
   color: #111;
 }
 
+.pc-hide {
+  display: none;
+}
+
+.mo-hide {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .pc-hide {
+    display: block;
+  }
+}
+
 .top-banner {
   position: fixed;
   left: 0;
@@ -239,6 +253,12 @@ main {
   padding: 160px 20px 80px;
 }
 
+@media screen and (max-width: 768px) {
+  .intro {
+    padding: 80px 20px 60px;
+  }
+}
+
 .intro-divider {
   width: 1px;
   height: 100px;
@@ -301,8 +321,10 @@ main {
   margin-bottom: 30px;
 }
 
-.product:first-child .thumb {
-  /* background: #b9d9eb; */
+@media screen and (max-width: 768px) {
+  .product .thumb {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 .product .thumb-img {
@@ -314,14 +336,14 @@ main {
   object-fit: contain;
 }
 
-.product .thumb-img--hover {
+/* .product .thumb-img--hover {
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
 .product .thumb:hover .thumb-img--hover {
   opacity: 1;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   .product .thumb-img--hover {
@@ -367,10 +389,22 @@ main {
 .img {
   padding-top: 200px;
 }
+
+.img picture {
+  display: block;
+  width: 100%;
+}
+
 .img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .img {
+    padding-top: 80px;
+  }
 }
 
 .brand-band {
@@ -395,11 +429,18 @@ main {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .brand-band {
+    margin-bottom: 120px !important;
+  }
+}
+
 .brand-band h3 {
   color: #fff;
   margin: 0 0 5px;
   font-size: 24px;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .brand-band p {
@@ -427,6 +468,12 @@ main {
 .instagram {
   text-align: center;
   padding: 200px 60px 240px 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .instagram {
+    padding: 80px 20px 120px 20px !important;
+  }
 }
 
 .instagram h3 {
