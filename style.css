@@ -432,6 +432,7 @@ main {
 @media screen and (max-width: 768px) {
   .brand-band {
     margin-bottom: 120px !important;
+    background-attachment: scroll;
   }
 }
 
