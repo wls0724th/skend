@@ -1,5 +1,15 @@
 * {
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+  cursor: pointer;
 }
 
 body {
