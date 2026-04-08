@@ -435,6 +435,7 @@ main {
 @media screen and (max-width: 768px) {
   .brand-band {
     margin-bottom: 120px !important;
+    /* iOS 등에서 fixed 미지원·버그 회피; main.js가 background-position으로 동일 효과 보정 */
     background-attachment: scroll;
   }
 }
