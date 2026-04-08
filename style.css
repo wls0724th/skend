@@ -253,12 +253,12 @@ main {
 
 .intro {
   text-align: center;
-  padding: 160px 20px 80px;
+  padding: 160px 20px 120px;
 }
 
 @media screen and (max-width: 768px) {
   .intro {
-    padding: 80px 20px 60px;
+    padding: 160px 20px 60px;
   }
 }
 
@@ -286,7 +286,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
 }
 
 .cat-item {
@@ -406,7 +406,7 @@ main {
 
 @media screen and (max-width: 768px) {
   .img {
-    padding-top: 80px;
+    padding-top: 120px;
   }
 }
 
@@ -414,7 +414,7 @@ main {
   position: relative;
   margin-bottom: 200px;
   min-height: 460px;
-  padding: 80px 24px;
+  padding: 120px 24px;
   background-image: url("./background.png");
   background-size: cover;
   background-position: center;
@@ -476,7 +476,7 @@ main {
 
 @media screen and (max-width: 768px) {
   .instagram {
-    padding: 80px 20px 120px 20px !important;
+    padding: 120px 20px 120px 20px !important;
   }
 }
 
@@ -664,7 +664,7 @@ main {
   }
 
   .instagram {
-    padding: 80px 0px 240px 0px;
+    padding: 120px 0px 240px 0px;
   }
 
   .category {
@@ -672,11 +672,11 @@ main {
   }
 
   .insta-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 6px;
   }
 
-  .insta-grid .insta-item:nth-child(n + 4) {
+  .insta-grid .insta-item:nth-child(n + 2) {
     display: none;
   }
 
