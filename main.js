@@ -24,7 +24,6 @@
     let lastTitleOpacity = -1;
 
     function measureLayout() {
-      winH = window.innerHeight;
       themedSections = [];
 
       for (const el of document.querySelectorAll("[data-header-theme]")) {
@@ -39,8 +38,21 @@
       if (scanSection) {
         const sr = scanSection.getBoundingClientRect();
         scanTop = sr.top + window.scrollY;
+        // 스캔 구간·중앙 기준 높이: CSS vh와 동일하게 맞춤
+        // 모바일(Safari 등)에서 100vh > window.innerHeight 인 경우가 많아,
+        // innerHeight로 중앙(winH/2)만 잡고 offsetHeight(200vh)로 scanRange를 잡으면
+        // 첫 로드 시 진행률이 ~40%처럼 과하게 올라감 → .stage(100vh) 실측값 사용
+        // const winH = window.innerHeight;
+        // scanRange = Math.max(1, scanSection.offsetHeight - winH);
+        const stageEl = scanSection.querySelector(".stage");
+        winH =
+          stageEl && stageEl.offsetHeight > 0
+            ? stageEl.offsetHeight
+            : window.innerHeight;
         // 스캔 구간 길이: sticky 스테이지가 한 화면을 지나가며 끝까지 스크롤하는 거리
         scanRange = Math.max(1, scanSection.offsetHeight - winH);
+      } else {
+        winH = window.innerHeight;
       }
     }
 
@@ -166,6 +178,9 @@
 
     window.addEventListener("scroll", onScroll, {passive: true});
     window.addEventListener("resize", scheduleLayoutChange);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", scheduleLayoutChange);
+    }
 
     const mainEl = document.querySelector("main");
     if (mainEl && typeof ResizeObserver !== "undefined") {
